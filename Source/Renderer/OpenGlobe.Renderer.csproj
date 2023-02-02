@@ -1,0 +1,265 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>9.0.30729</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{E735AB3A-EB92-4C51-814E-E5E1F2173AA4}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>OpenGlobe.Renderer</RootNamespace>
+    <AssemblyName>OpenGlobe.Renderer</AssemblyName>
+    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="OpenTK, Version=0.9.9.2, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\ThirdParty\OpenTKGL4\Binaries\OpenTK\Release\OpenTK.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.XML" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="BlittableBGRA.cs" />
+    <Compile Include="BlittableRGBA.cs" />
+    <Compile Include="Buffers\BufferHint.cs" />
+    <Compile Include="Buffers\PixelBufferHint.cs" />
+    <Compile Include="ClearState.cs" />
+    <Compile Include="Infrastructure\EmbeddedResources.cs" />
+    <Compile Include="Shaders\DrawAutomaticUniforms\CameraEyeHighUniform.cs" />
+    <Compile Include="Shaders\DrawAutomaticUniforms\CameraEyeHighUniformFactory.cs" />
+    <Compile Include="Shaders\DrawAutomaticUniforms\CameraEyeLowUniform.cs" />
+    <Compile Include="Shaders\DrawAutomaticUniforms\CameraEyeLowUniformFactory.cs" />
+    <Compile Include="Shaders\DrawAutomaticUniforms\ModelMatrixUniform.cs" />
+    <Compile Include="Shaders\DrawAutomaticUniforms\ModelMatrixUniformFactory.cs" />
+    <Compile Include="Shaders\DrawAutomaticUniforms\ModelViewMatrixRelativeToEyeUniform.cs" />
+    <Compile Include="Shaders\DrawAutomaticUniforms\ModelViewMatrixRelativeToEyeUniformFactory.cs" />
+    <Compile Include="Shaders\DrawAutomaticUniforms\ModelViewPerspectiveMatrixRelativeToEyeUniform.cs" />
+    <Compile Include="Shaders\DrawAutomaticUniforms\ModelViewPerspectiveMatrixRelativeToEyeUniformFactory.cs" />
+    <Compile Include="Shaders\DrawAutomaticUniforms\ViewMatrixUniform.cs" />
+    <Compile Include="Shaders\DrawAutomaticUniforms\ViewMatrixUniformFactory.cs" />
+    <Compile Include="VertexArray\VertexLocations.cs" />
+    <Compile Include="DrawState.cs" />
+    <Compile Include="Extensions.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Framebuffer\HighResolutionSnap.cs" />
+    <Compile Include="Framebuffer\HighResolutionSnapFramebuffer.cs" />
+    <Compile Include="GL3x\Buffers\PixelBufferGL3x.cs" />
+    <Compile Include="GL3x\ExtensionsGL3x.cs" />
+    <Compile Include="GL3x\Names\BufferNameGL3x.cs" />
+    <Compile Include="GL3x\Names\FenceNameGL3x.cs" />
+    <Compile Include="GL3x\Names\SamplerNameGL3x.cs" />
+    <Compile Include="GL3x\Names\TextureNameGL3x.cs" />
+    <Compile Include="GL3x\Names\ShaderProgramNameGL3x.cs" />
+    <Compile Include="GL3x\Names\FinalizerThreadContextGL3x.cs" />
+    <Compile Include="GL3x\Names\FramebufferNameGL3x.cs" />
+    <Compile Include="GL3x\ICleanable.cs" />
+    <Compile Include="GL3x\ICleanableObserver.cs" />
+    <Compile Include="GL3x\Input\KeyboardGL3x.cs" />
+    <Compile Include="GL3x\Input\MouseGL3x.cs" />
+    <Compile Include="GL3x\Names\VertexArrayNameGL3x.cs" />
+    <Compile Include="GL3x\Shaders\FragmentOutputsGL3x.cs" />
+    <Compile Include="GL3x\Synchronization\FenceGL3x.cs" />
+    <Compile Include="GL3x\Textures\TextureSamplerGL3x.cs" />
+    <Compile Include="Input\Keyboard.cs" />
+    <Compile Include="Input\KeyboardKey.cs" />
+    <Compile Include="Input\KeyboardKeyEvent.cs" />
+    <Compile Include="Input\KeyboardKeyEventArgs.cs" />
+    <Compile Include="Input\Mouse.cs" />
+    <Compile Include="Input\MouseButton.cs" />
+    <Compile Include="Input\MouseButtonEvent.cs" />
+    <Compile Include="Input\MouseButtonEventArgs.cs" />
+    <Compile Include="Input\MouseMoveEventArgs.cs" />
+    <Compile Include="Mesh\MeshVertexBufferAttributes.cs" />
+    <Compile Include="Mesh\MeshBuffers.cs" />
+    <Compile Include="RenderState\ColorMask.cs" />
+    <Compile Include="RenderState\DepthRange.cs" />
+    <Compile Include="Scene\Camera.cs" />
+    <Compile Include="Scene\PersistentView.cs" />
+    <Compile Include="Scene\SceneState.cs" />
+    <Compile Include="Shaders\Cache\CachedShaderProgram.cs" />
+    <Compile Include="Shaders\Cache\ShaderCache.cs" />
+    <Compile Include="Shaders\DrawAutomaticUniforms\CameraEyeUniform.cs" />
+    <Compile Include="Shaders\DrawAutomaticUniforms\CameraEyeUniformFactory.cs" />
+    <Compile Include="Shaders\DrawAutomaticUniforms\DrawAutomaticUniform.cs" />
+    <Compile Include="Shaders\DrawAutomaticUniforms\DrawAutomaticUniformFactory.cs" />
+    <Compile Include="Shaders\DrawAutomaticUniforms\DrawAutomaticUniformFactoryCollection.cs" />
+    <Compile Include="Shaders\DrawAutomaticUniforms\CameraLightPositionUniform.cs" />
+    <Compile Include="Shaders\DrawAutomaticUniforms\CameraLightPositionUniformFactory.cs" />
+    <Compile Include="Shaders\DrawAutomaticUniforms\HighResolutionSnapScaleUniform.cs" />
+    <Compile Include="Shaders\DrawAutomaticUniforms\HighResolutionSnapScaleUniformFactory.cs" />
+    <Compile Include="Shaders\DrawAutomaticUniforms\InverseViewportDimensionsUniform.cs" />
+    <Compile Include="Shaders\DrawAutomaticUniforms\InverseViewportDimensionsUniformFactory.cs" />
+    <Compile Include="Shaders\DrawAutomaticUniforms\LightPropertiesUniform.cs" />
+    <Compile Include="Shaders\DrawAutomaticUniforms\LightPropertiesUniformFactory.cs" />
+    <Compile Include="Shaders\DrawAutomaticUniforms\ModelViewMatrixUniform.cs" />
+    <Compile Include="Shaders\DrawAutomaticUniforms\ModelViewMatrixUniformFactory.cs" />
+    <Compile Include="Shaders\DrawAutomaticUniforms\ModelViewOrthographicMatrixUniform.cs" />
+    <Compile Include="Shaders\DrawAutomaticUniforms\ModelViewOrthographicMatrixUniformFactory.cs" />
+    <Compile Include="Shaders\DrawAutomaticUniforms\ModelViewPerspectiveMatrixUniform.cs" />
+    <Compile Include="Shaders\DrawAutomaticUniforms\ModelViewPerspectiveMatrixUniformFactory.cs" />
+    <Compile Include="Shaders\DrawAutomaticUniforms\ModelZToClipCoordinatesUniform.cs" />
+    <Compile Include="Shaders\DrawAutomaticUniforms\OrthographicMatrixUniform.cs" />
+    <Compile Include="Shaders\DrawAutomaticUniforms\OrthographicMatrixUniformFactory.cs" />
+    <Compile Include="Shaders\DrawAutomaticUniforms\PerspectiveFarPlaneDistanceUniform.cs" />
+    <Compile Include="Shaders\DrawAutomaticUniforms\PerspectiveFarPlaneDistanceUniformFactory.cs" />
+    <Compile Include="Shaders\DrawAutomaticUniforms\PerspectiveNearPlaneDistanceUniform.cs" />
+    <Compile Include="Shaders\DrawAutomaticUniforms\PerspectiveNearPlaneDistanceUniformFactory.cs" />
+    <Compile Include="Shaders\DrawAutomaticUniforms\PerspectiveMatrixUniform.cs" />
+    <Compile Include="Shaders\DrawAutomaticUniforms\PerspectiveMatrixUniformFactory.cs" />
+    <Compile Include="Shaders\DrawAutomaticUniforms\PixelSizePerDistanceUniform.cs" />
+    <Compile Include="Shaders\DrawAutomaticUniforms\PixelSizePerDistanceUniformFactory.cs" />
+    <Compile Include="Shaders\DrawAutomaticUniforms\SunPositionUniform.cs" />
+    <Compile Include="Shaders\DrawAutomaticUniforms\SunPositionUniformFactory.cs" />
+    <Compile Include="Shaders\DrawAutomaticUniforms\ViewportOrthographicMatrixUniform.cs" />
+    <Compile Include="Shaders\DrawAutomaticUniforms\ViewportOrthographicMatrixUniformFactory.cs" />
+    <Compile Include="Shaders\DrawAutomaticUniforms\ViewportUniform.cs" />
+    <Compile Include="Shaders\DrawAutomaticUniforms\ViewportUniformFactory.cs" />
+    <Compile Include="Shaders\DrawAutomaticUniforms\ViewportTransformationMatrixUniform.cs" />
+    <Compile Include="Shaders\DrawAutomaticUniforms\ViewportTransformationMatrixUniformFactory.cs" />
+    <Compile Include="Shaders\DrawAutomaticUniforms\ModelZToClipCoordinatesUniformFactory.cs" />
+    <Compile Include="Shaders\DrawAutomaticUniforms\Wgs84HeightUniform.cs" />
+    <Compile Include="Shaders\DrawAutomaticUniforms\Wgs84HeightUniformFactory.cs" />
+    <Compile Include="Shaders\DrawAutomaticUniforms\WindowToWorldNearPlaneUniform.cs" />
+    <Compile Include="Shaders\DrawAutomaticUniforms\WindowToWorldNearPlaneUniformFactory.cs" />
+    <Compile Include="Shaders\FragmentOutputs.cs" />
+    <Compile Include="Shaders\LinkAutomaticUniforms\LinkAutomaticUniform.cs" />
+    <Compile Include="Shaders\LinkAutomaticUniforms\LinkAutomaticUniformCollection.cs" />
+    <Compile Include="Shaders\LinkAutomaticUniforms\TextureUniform.cs" />
+    <Compile Include="Synchronization\Fence.cs" />
+    <Compile Include="Textures\ImageDatatype.cs" />
+    <Compile Include="Textures\ImageFormat.cs" />
+    <Compile Include="Textures\TextureFormat.cs" />
+    <Compile Include="Textures\TextureSamplers.cs" />
+    <Compile Include="Textures\TextureMagnificationFilter.cs" />
+    <Compile Include="Textures\TextureMinificationFilter.cs" />
+    <Compile Include="Textures\TextureUtility.cs" />
+    <Compile Include="Textures\TextureWrap.cs" />
+    <Compile Include="Tools\TextureAtlas.cs" />
+    <Compile Include="Tools\TextureCoordinateCollection.cs" />
+    <Compile Include="VertexArray\VertexBufferAttribute.cs" />
+    <Compile Include="VertexArray\VertexBufferAttributes.cs" />
+    <Compile Include="VertexArray\VertexArray.cs" />
+    <Compile Include="Buffers\IndexBuffer.cs" />
+    <Compile Include="Buffers\ReadPixelBuffer.cs" />
+    <Compile Include="Buffers\UniformBuffer.cs" />
+    <Compile Include="Buffers\VertexBuffer.cs" />
+    <Compile Include="Buffers\WritePixelBuffer.cs" />
+    <Compile Include="Context.cs" />
+    <Compile Include="CouldNotCreateVideoCardResourceException.cs" />
+    <Compile Include="Device.cs" />
+    <Compile Include="Framebuffer\ColorAttachments.cs" />
+    <Compile Include="Framebuffer\Framebuffer.cs" />
+    <Compile Include="GL3x\VertexArray\VertexBufferAttributesGL3x.cs" />
+    <Compile Include="GL3x\VertexArray\VertexArrayGL3x.cs" />
+    <Compile Include="GL3x\Buffers\BufferGL3x.cs" />
+    <Compile Include="GL3x\Buffers\IndexBufferGL3x.cs" />
+    <Compile Include="GL3x\Buffers\ReadPixelBufferGL3x.cs" />
+    <Compile Include="GL3x\Buffers\UniformBufferGL3x.cs" />
+    <Compile Include="GL3x\Buffers\VertexBufferGL3x.cs" />
+    <Compile Include="GL3x\Buffers\WritePixelBufferGL3x.cs" />
+    <Compile Include="GL3x\ContextGL3x.cs" />
+    <Compile Include="GL3x\Framebuffer\ColorAttachmentsGL3x.cs" />
+    <Compile Include="GL3x\Framebuffer\FramebufferGL3x.cs" />
+    <Compile Include="GL3x\GraphicsWindowGL3x.cs" />
+    <Compile Include="GL3x\Shaders\ShaderObjectGL3x.cs" />
+    <Compile Include="GL3x\Shaders\ShaderProgramGL3x.cs" />
+    <Compile Include="GL3x\Shaders\UniformBlockGL3x.cs" />
+    <Compile Include="GL3x\Shaders\UniformBoolGL3x.cs" />
+    <Compile Include="GL3x\Shaders\UniformBoolVector2GL3x.cs" />
+    <Compile Include="GL3x\Shaders\UniformBoolVector3GL3x.cs" />
+    <Compile Include="GL3x\Shaders\UniformBoolVector4GL3x.cs" />
+    <Compile Include="GL3x\Shaders\UniformFloatGL3x.cs" />
+    <Compile Include="GL3x\Shaders\UniformFloatMatrix22GL3x.cs" />
+    <Compile Include="GL3x\Shaders\UniformFloatMatrix23GL3x.cs" />
+    <Compile Include="GL3x\Shaders\UniformFloatMatrix24GL3x.cs" />
+    <Compile Include="GL3x\Shaders\UniformFloatMatrix32GL3x.cs" />
+    <Compile Include="GL3x\Shaders\UniformFloatMatrix33GL3x.cs" />
+    <Compile Include="GL3x\Shaders\UniformFloatMatrix34GL3x.cs" />
+    <Compile Include="GL3x\Shaders\UniformFloatMatrix42GL3x.cs" />
+    <Compile Include="GL3x\Shaders\UniformFloatMatrix43GL3x.cs" />
+    <Compile Include="GL3x\Shaders\UniformFloatMatrix44GL3x.cs" />
+    <Compile Include="GL3x\Shaders\UniformFloatVector2GL3x.cs" />
+    <Compile Include="GL3x\Shaders\UniformFloatVector3GL3x.cs" />
+    <Compile Include="GL3x\Shaders\UniformFloatVector4GL3x.cs" />
+    <Compile Include="GL3x\Shaders\UniformIntGL3x.cs" />
+    <Compile Include="GL3x\Shaders\UniformIntVector2GL3x.cs" />
+    <Compile Include="GL3x\Shaders\UniformIntVector3GL3x.cs" />
+    <Compile Include="GL3x\Shaders\UniformIntVector4GL3x.cs" />
+    <Compile Include="GL3x\Textures\Texture2DGL3x.cs" />
+    <Compile Include="GL3x\Textures\TextureUnitGL3x.cs" />
+    <Compile Include="GL3x\Textures\TextureUnitsGL3x.cs" />
+    <Compile Include="GL3x\TypeConverterGL3x.cs" />
+    <Compile Include="InsufficientVideoCardException.cs" />
+    <Compile Include="GraphicsWindow.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="RenderState\Blending.cs" />
+    <Compile Include="RenderState\DepthTest.cs" />
+    <Compile Include="RenderState\FacetCulling.cs" />
+    <Compile Include="RenderState\PrimitiveRestart.cs" />
+    <Compile Include="RenderState\RenderState.cs" />
+    <Compile Include="RenderState\ScissorTest.cs" />
+    <Compile Include="RenderState\StencilTest.cs" />
+    <Compile Include="RenderState\StencilTestFace.cs" />
+    <Compile Include="Shaders\ShaderProgram.cs" />
+    <Compile Include="Shaders\Uniform.cs" />
+    <Compile Include="Shaders\UniformBlock.cs" />
+    <Compile Include="Shaders\UniformBlockArrayMember.cs" />
+    <Compile Include="Shaders\UniformBlockCollection.cs" />
+    <Compile Include="Shaders\UniformBlockMatrixMember.cs" />
+    <Compile Include="Shaders\UniformBlockMember.cs" />
+    <Compile Include="Shaders\UniformBlockMemberCollection.cs" />
+    <Compile Include="Shaders\UniformCollection.cs" />
+    <Compile Include="Shaders\UniformBlockMatrixArrayMember.cs" />
+    <Compile Include="Shaders\ShaderVertexAttribute.cs" />
+    <Compile Include="ShaderVertexAttributeCollection.cs" />
+    <Compile Include="Textures\Texture2D.cs" />
+    <Compile Include="Textures\Texture2DDescription.cs" />
+    <Compile Include="Textures\TextureSampler.cs" />
+    <Compile Include="Textures\TextureUnit.cs" />
+    <Compile Include="Textures\TextureUnits.cs" />
+    <Compile Include="VertexArray\VertexArraySizes.cs" />
+    <Compile Include="VertexArray\ComponentDatatype.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Core\OpenGlobe.Core.csproj">
+      <Project>{51502B9C-1A97-4F2C-8541-7D9D61ED6C6D}</Project>
+      <Name>OpenGlobe.Core</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="GL3x\GLSL\BuiltinFunctions.glsl" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

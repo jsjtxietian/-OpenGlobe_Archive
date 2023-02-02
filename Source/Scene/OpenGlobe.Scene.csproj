@@ -1,0 +1,235 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>9.0.30729</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{71ABD41E-1545-45DF-B016-58E89111A4F3}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>OpenGlobe.Scene</RootNamespace>
+    <AssemblyName>OpenGlobe.Scene</AssemblyName>
+    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="OpenTK, Version=1.0.0.201, Culture=neutral, PublicKeyToken=bad199fe84eb3df4, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\ThirdParty\OpenTKGL4\Binaries\OpenTK\Release\OpenTK.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Drawing" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Cameras\CameraFly.cs" />
+    <Compile Include="Cameras\CameraLookAtPoint.cs" />
+    <Compile Include="Shapefiles\ShapefileAppearance.cs" />
+    <Compile Include="Shapefiles\ShapefileGraphics.cs" />
+    <Compile Include="Shapefiles\ShapefileRenderer.cs" />
+    <Compile Include="Terrain\RasterLevel.cs" />
+    <Compile Include="Terrain\RasterLevelCollection.cs" />
+    <Compile Include="Terrain\RasterSource.cs" />
+    <Compile Include="Terrain\RasterTile.cs" />
+    <Compile Include="Terrain\RasterTileIdentifier.cs" />
+    <Compile Include="Terrain\RasterTileRegion.cs" />
+    <Compile Include="Terrain\TerrainTile.cs" />
+    <Compile Include="Terrain\ClipmapLevel.cs" />
+    <Compile Include="Terrain\ClipmapUpdate.cs" />
+    <Compile Include="Terrain\ClipmapUpdater.cs" />
+    <Compile Include="Terrain\GlobeClipmapTerrain.cs" />
+    <Compile Include="Terrain\EsriRestImagery.cs" />
+    <Compile Include="Globes\DayNight\DayNightGlobe.cs" />
+    <Compile Include="Globes\DayNight\DayNightViewportQuad.cs" />
+    <Compile Include="Globes\LatitudeLongitudeGrid\GridResolution.cs" />
+    <Compile Include="Globes\LatitudeLongitudeGrid\GridResolutionCollection.cs" />
+    <Compile Include="Globes\LatitudeLongitudeGrid\LatitudeLongitudeGridGlobe.cs" />
+    <Compile Include="Globes\RayCasted\RayCastedGlobe.cs" />
+    <Compile Include="Globes\Tessellated\TessellatedGlobe.cs" />
+    <Compile Include="Infrastructure\EmbeddedResources.cs" />
+    <Compile Include="Infrastructure\Verify.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Renderables\Axes.cs" />
+    <Compile Include="Renderables\BillboardCollection\Billboard.cs" />
+    <Compile Include="Renderables\BillboardCollection\BillboardCollection.cs" />
+    <Compile Include="Renderables\HeadsUpDisplay\HeadsUpDisplay.cs" />
+    <Compile Include="Renderables\Plane\Plane.cs" />
+    <Compile Include="Renderables\Polygon\Polygon.cs" />
+    <Compile Include="Renderables\PolylineOnTerrain\PolylineOnTerrain.cs" />
+    <Compile Include="Renderables\Polyline\Polyline.cs" />
+    <Compile Include="Renderables\Polyline\OutlinedPolylineGeometryShader.cs" />
+    <Compile Include="Renderables\Polyline\OutlinedPolylineTexture.cs" />
+    <Compile Include="Renderables\Renderable.cs" />
+    <Compile Include="Renderables\ViewportQuad\ViewportQuad.cs" />
+    <Compile Include="Renderables\ViewportQuad\ViewportQuadGeometry.cs" />
+    <Compile Include="Renderables\Wireframe\Wireframe.cs" />
+    <Compile Include="Shapefiles\PointShapefile.cs" />
+    <Compile Include="Shapefiles\PolygonShapefile.cs" />
+    <Compile Include="Shapefiles\PolylineShapefile.cs" />
+    <Compile Include="Terrain\RayCastedTerrainTile.cs" />
+    <Compile Include="Terrain\TriangleMeshTerrainTile.cs" />
+    <Compile Include="Terrain\VertexDisplacementMapTerrainTile.cs" />
+    <Compile Include="Terrain\WorldWindTerrainSource.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Core\OpenGlobe.Core.csproj">
+      <Project>{51502B9C-1A97-4F2C-8541-7D9D61ED6C6D}</Project>
+      <Name>OpenGlobe.Core</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Renderer\OpenGlobe.Renderer.csproj">
+      <Project>{E735AB3A-EB92-4C51-814E-E5E1F2173AA4}</Project>
+      <Name>OpenGlobe.Renderer</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Terrain\VertexDisplacementMapTerrainTile\TerrainVS.glsl" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Terrain\VertexDisplacementMapTerrainTile\TerrainFS.glsl" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Terrain\VertexDisplacementMapTerrainTile\NormalsFS.glsl" />
+    <EmbeddedResource Include="Terrain\VertexDisplacementMapTerrainTile\NormalsGS.glsl" />
+    <EmbeddedResource Include="Terrain\VertexDisplacementMapTerrainTile\NormalsVS.glsl" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Terrain\VertexDisplacementMapTerrainTile\WireframeFS.glsl" />
+    <EmbeddedResource Include="Terrain\VertexDisplacementMapTerrainTile\WireframeGS.glsl" />
+    <EmbeddedResource Include="Terrain\VertexDisplacementMapTerrainTile\WireframeVS.glsl" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Globes\DayNight\Shaders\ViewportQuadFS.glsl" />
+    <EmbeddedResource Include="Globes\DayNight\Shaders\ViewportQuadVS.glsl" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Globes\DayNight\Shaders\GlobeFS.glsl" />
+    <EmbeddedResource Include="Globes\DayNight\Shaders\GlobeVS.glsl" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Globes\Tessellated\Shaders\GlobeFS.glsl" />
+    <EmbeddedResource Include="Globes\Tessellated\Shaders\GlobeVS.glsl" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Globes\RayCasted\Shaders\GlobeFS.glsl" />
+    <EmbeddedResource Include="Globes\RayCasted\Shaders\GlobeVS.glsl" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Globes\RayCasted\Shaders\SolidShadedGlobeFS.glsl" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Terrain\RayCastedTerrainTile\TerrainFS.glsl" />
+    <EmbeddedResource Include="Terrain\RayCastedTerrainTile\TerrainVS.glsl" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Renderables\BillboardCollection\Shaders\BillboardsFS.glsl" />
+    <EmbeddedResource Include="Renderables\BillboardCollection\Shaders\BillboardsGS.glsl" />
+    <EmbeddedResource Include="Renderables\BillboardCollection\Shaders\BillboardsVS.glsl" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Terrain\TriangleMeshTerrainTile\TerrainFS.glsl" />
+    <EmbeddedResource Include="Terrain\TriangleMeshTerrainTile\TerrainVS.glsl" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Renderables\Polyline\OutlinedPolylineTexture\PolylineFS.glsl" />
+    <EmbeddedResource Include="Renderables\Polyline\OutlinedPolylineTexture\PolylineGS.glsl" />
+    <EmbeddedResource Include="Renderables\Polyline\OutlinedPolylineTexture\PolylineVS.glsl" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Renderables\ViewportQuad\Shaders\ViewportQuadFS.glsl" />
+    <EmbeddedResource Include="Renderables\ViewportQuad\Shaders\ViewportQuadVS.glsl" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Renderables\Polyline\Polyline\PolylineFS.glsl" />
+    <EmbeddedResource Include="Renderables\Polyline\Polyline\PolylineGS.glsl" />
+    <EmbeddedResource Include="Renderables\Polyline\Polyline\PolylineVS.glsl" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Renderables\Polyline\OutlinedPolylineGeometryShader\PolylineFS.glsl" />
+    <EmbeddedResource Include="Renderables\Polyline\OutlinedPolylineGeometryShader\PolylineGS.glsl" />
+    <EmbeddedResource Include="Renderables\Polyline\OutlinedPolylineGeometryShader\PolylineVS.glsl" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Renderables\Wireframe\Shaders\WireframeFS.glsl" />
+    <EmbeddedResource Include="Renderables\Wireframe\Shaders\WireframeGS.glsl" />
+    <EmbeddedResource Include="Renderables\Wireframe\Shaders\WireframeVS.glsl" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Renderables\Plane\Shaders\FillFS.glsl" />
+    <EmbeddedResource Include="Renderables\Plane\Shaders\FillVS.glsl" />
+    <EmbeddedResource Include="Renderables\Plane\Shaders\LineFS.glsl" />
+    <EmbeddedResource Include="Renderables\Plane\Shaders\LineGS.glsl" />
+    <EmbeddedResource Include="Renderables\Plane\Shaders\LineVS.glsl" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Terrain\TriangleMeshTerrainTile\SilhouetteFS.glsl" />
+    <EmbeddedResource Include="Terrain\TriangleMeshTerrainTile\SilhouetteGS.glsl" />
+    <EmbeddedResource Include="Terrain\TriangleMeshTerrainTile\SilhouetteVS.glsl" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Renderables\HeadsUpDisplay\Shaders\HeadsUpDisplayFS.glsl" />
+    <EmbeddedResource Include="Renderables\HeadsUpDisplay\Shaders\HeadsUpDisplayGS.glsl" />
+    <EmbeddedResource Include="Renderables\HeadsUpDisplay\Shaders\HeadsUpDisplayVS.glsl" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Globes\LatitudeLongitudeGrid\Shaders\GlobeFS.glsl" />
+    <EmbeddedResource Include="Globes\LatitudeLongitudeGrid\Shaders\GlobeVS.glsl" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Renderables\Polygon\Shaders\PolygonFS.glsl" />
+    <EmbeddedResource Include="Renderables\Polygon\Shaders\PolygonVS.glsl" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Renderables\PolylineOnTerrain\Shaders\PolylineOnTerrainShadowVolumeFS.glsl" />
+    <EmbeddedResource Include="Renderables\PolylineOnTerrain\Shaders\PolylineOnTerrainShadowVolumeGS.glsl" />
+    <EmbeddedResource Include="Renderables\PolylineOnTerrain\Shaders\PolylineOnTerrainShadowVolumeVS.glsl" />
+    <EmbeddedResource Include="Renderables\PolylineOnTerrain\Shaders\PolylineOnTerrainWallFS.glsl" />
+    <EmbeddedResource Include="Renderables\PolylineOnTerrain\Shaders\PolylineOnTerrainWallGS.glsl" />
+    <EmbeddedResource Include="Renderables\PolylineOnTerrain\Shaders\PolylineOnTerrainWallVS.glsl" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Terrain\ClipmapTerrain\ClipmapUpdateFS.glsl" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Terrain\ClipmapTerrain\ClipmapUpdateVS.glsl" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Terrain\ClipmapTerrain\ClipmapUpsampleFS.glsl" />
+    <EmbeddedResource Include="Terrain\ClipmapTerrain\ClipmapUpsampleVS.glsl" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Terrain\ClipmapTerrain\ClipmapComputeNormalsFS.glsl" />
+    <EmbeddedResource Include="Terrain\ClipmapTerrain\ClipmapComputeNormalsVS.glsl" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Terrain\ClipmapTerrain\GlobeClipmapFS.glsl" />
+    <EmbeddedResource Include="Terrain\ClipmapTerrain\GlobeClipmapVS.glsl" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Globes\Tessellated\Shaders\GlobeHPVS.glsl" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

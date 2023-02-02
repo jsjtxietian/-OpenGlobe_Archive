@@ -1,0 +1,141 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>9.0.30729</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{51502B9C-1A97-4F2C-8541-7D9D61ED6C6D}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>OpenGlobe.Core</RootNamespace>
+    <AssemblyName>OpenGlobe.Core</AssemblyName>
+    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Compile Include="ArraySizeInBytes.cs" />
+    <Compile Include="BoundingVolumes\AxisAlignedBoundingBox.cs" />
+    <Compile Include="CollectionAlgorithms.cs" />
+    <Compile Include="CollisionDetection\ContainmentTests.cs" />
+    <Compile Include="CollisionDetection\IntersectionTests.cs" />
+    <Compile Include="Geodetic2D.cs" />
+    <Compile Include="Geodetic3D.cs" />
+    <Compile Include="Disposable.cs" />
+    <Compile Include="GeodeticExtent.cs" />
+    <Compile Include="Geometry\Ellipsoid.cs" />
+    <Compile Include="Geometry\EllipsoidTangentPlane.cs" />
+    <Compile Include="Geometry\Indices\IndicesBase.cs" />
+    <Compile Include="Geometry\Indices\IndicesType.cs" />
+    <Compile Include="Geometry\Indices\IndicesUnsignedInt.cs" />
+    <Compile Include="Geometry\Indices\IndicesUnsignedShort.cs" />
+    <Compile Include="Geometry\Indices\TriangleIndicesUnsignedShort.cs" />
+    <Compile Include="Geometry\Indices\TriangleIndicesUnsignedInt.cs" />
+    <Compile Include="Geometry\Mesh.cs" />
+    <Compile Include="Geometry\VertexAttributes\VertexAttribute.cs" />
+    <Compile Include="Geometry\VertexAttributes\VertexAttributeByte.cs" />
+    <Compile Include="Geometry\VertexAttributes\VertexAttributeCollection.cs" />
+    <Compile Include="Geometry\VertexAttributes\VertexAttributeDoubleVector3.cs" />
+    <Compile Include="Geometry\VertexAttributes\VertexAttributeFloat.cs" />
+    <Compile Include="Geometry\VertexAttributes\VertexAttributeFloatVector2.cs" />
+    <Compile Include="Geometry\VertexAttributes\VertexAttributeFloatVector3.cs" />
+    <Compile Include="Geometry\VertexAttributes\VertexAttributeFloatVector4.cs" />
+    <Compile Include="Geometry\VertexAttributes\VertexAttributeHalfFloat.cs" />
+    <Compile Include="Geometry\VertexAttributes\VertexAttributeHalfFloatVector2.cs" />
+    <Compile Include="Geometry\VertexAttributes\VertexAttributeHalfFloatVector3.cs" />
+    <Compile Include="Geometry\VertexAttributes\VertexAttributeHalfFloatVector4.cs" />
+    <Compile Include="Geometry\VertexAttributes\VertexAttributeRGB.cs" />
+    <Compile Include="Geometry\VertexAttributes\VertexAttributeRGBA.cs" />
+    <Compile Include="Geometry\VertexAttributes\VertexAttributeType.cs" />
+    <Compile Include="Half.cs" />
+    <Compile Include="Imaging\BitmapAlgorithms.cs" />
+    <Compile Include="Interval.cs" />
+    <Compile Include="Matrices\Matrix2.cs" />
+    <Compile Include="Matrices\Matrix23.cs" />
+    <Compile Include="Matrices\Matrix24.cs" />
+    <Compile Include="Matrices\Matrix32.cs" />
+    <Compile Include="Matrices\Matrix34.cs" />
+    <Compile Include="Matrices\Matrix3D.cs" />
+    <Compile Include="Matrices\Matrix3F.cs" />
+    <Compile Include="Matrices\Matrix42.cs" />
+    <Compile Include="Matrices\Matrix43.cs" />
+    <Compile Include="Matrices\Matrix4D.cs" />
+    <Compile Include="Matrices\Matrix4F.cs" />
+    <Compile Include="MessageQueue.cs" />
+    <Compile Include="MessageQueueEventArgs.cs" />
+    <Compile Include="Polygons\EarClipping.cs" />
+    <Compile Include="Polygons\EarClippingOnEllipsoid.cs" />
+    <Compile Include="Geometry\Edge.cs" />
+    <Compile Include="Polygons\IndexedVector.cs" />
+    <Compile Include="Polygons\SimplePolygonAlgorithms.cs" />
+    <Compile Include="Polygons\TriangleMeshSubdivision.cs" />
+    <Compile Include="Polygons\TriangleMeshSubdivisionResult.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="RectangleD.cs" />
+    <Compile Include="RectangleH.cs" />
+    <Compile Include="Shapefile\PointShape.cs" />
+    <Compile Include="Shapefile\PolylineShape.cs" />
+    <Compile Include="Shapefile\Shape.cs" />
+    <Compile Include="Shapefile\ShapefilePolygon.cs" />
+    <Compile Include="Shapefile\ShapePart.cs" />
+    <Compile Include="Shapefile\ShapeType.cs" />
+    <Compile Include="Shapefile\Shapfile.cs" />
+    <Compile Include="SizeInBytes.cs" />
+    <Compile Include="Tessellation\BoxTessellator.cs" />
+    <Compile Include="Tessellation\CubeMapEllipsoidTessellator.cs" />
+    <Compile Include="Tessellation\GeographicGridEllipsoidTessellator.cs" />
+    <Compile Include="Tessellation\RectangleTessellator.cs" />
+    <Compile Include="Tessellation\SubdivisionEllipsoidTessellator.cs" />
+    <Compile Include="Tessellation\SubdivisionSphereTessellator.cs" />
+    <Compile Include="Tessellation\SubdivisionSphereTessellatorSimple.cs" />
+    <Compile Include="Tessellation\SubdivisionUtility.cs" />
+    <Compile Include="Trig.cs" />
+    <Compile Include="Utility.cs" />
+    <Compile Include="Vectors\Vector2B.cs" />
+    <Compile Include="Vectors\Vector2D.cs" />
+    <Compile Include="Vectors\Vector2F.cs" />
+    <Compile Include="Vectors\Vector2H.cs" />
+    <Compile Include="Vectors\Vector2I.cs" />
+    <Compile Include="Vectors\Vector3B.cs" />
+    <Compile Include="Vectors\Vector3D.cs" />
+    <Compile Include="Vectors\Vector3F.cs" />
+    <Compile Include="Vectors\Vector3H.cs" />
+    <Compile Include="Vectors\Vector3I.cs" />
+    <Compile Include="Vectors\Vector4B.cs" />
+    <Compile Include="Vectors\Vector4D.cs" />
+    <Compile Include="Vectors\Vector4F.cs" />
+    <Compile Include="Vectors\Vector4H.cs" />
+    <Compile Include="Vectors\Vector4I.cs" />
+    <Compile Include="Vectors\EmulatedVector3D.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Drawing" />
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
